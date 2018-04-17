@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sim</title>
+</head>
+<body>
+<center><h1>SIM</h1>
+    <h3>Input two sentences to calculate values</h3>
+    <p>The first sentence <input type="text" name="first" id="first"></p>
+    <p>The second sentence<input type="text" name="second" id="second"></p>
+    <button type="submit" class="btn1" id="answers">Show answers</button><br>
+    <span id="product">product : <span id="ans1"></span></span><br>
+    <span id="cos">cos : <span id="ans2"></span></span><br>
+    <span id="jaccard">jaccard : <span id="ans3"></span></span>
+</center>
+<script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $("#answers").on("click", function () {
+
+        $.ajax({
+            url: '/sim',
+            type: 'post',
+            data: {
+                "first": $('#first')[0].value,
+                "second": $('#second')[0].value
+            },
+            success: function(data) {
+                //alert(data)
+                let [product, cos, jaccard] = JSON.parse(data)
+                $('#ans1').text(product)
+                $('#ans2').text(cos)
+                $('#ans3').text(jaccard)
+            }
+        })
+    })
+</script>
+</body>
+</html>
