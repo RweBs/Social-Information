@@ -93,6 +93,10 @@ def cal_cos():
 
 #总函数
 def solve(str1,str2):
+    # vec1 = []
+    # vec2 = []
+    # dict1 = {}
+    # dict2 = {}
     fenci2(str1,dict1)
     fenci2(str2,dict2)
     get_vector()

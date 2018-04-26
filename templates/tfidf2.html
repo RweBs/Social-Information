@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Social Information</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="{{ url_for('static', filename='html5shiv.js') }}"></script><![endif]-->
+		<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="{{ url_for('static', filename='ie8.css') }}"/><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+		<header id="header">
+			<h1>TF-IDF</h1>
+			<P>Update your file and calculate TF-IDF</P>
+		</header>
+
+		<form id="form1" action="/tfidf/upload" method="post" enctype="multipart/form-data">
+			<input type="file" name="myfile"/>
+			<input type="submit" value="Upload"/>
+		</form>
+		<br><br>
+		<h3>Calculate TF-IDF value</h3>
+		<form id="form2" action="/tfidf/caltfidf" method="post">
+			<input type="submit" value="Calculate">
+		</form>
+		<br>
+		<h3>Show results</h3>
+		<!--<button class="btn btn-success" id="jump">显示结果</button>-->
+		<form id="form3" action="/tfidf/showtfidf" method="post">
+			<input type="submit" value="Show">
+		</form>
+		<br>
+		<!--[if lte IE 8]>
+		<script src="{{ url_for('static', filename='respond.min.js') }}"></script><![endif]-->
+		<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+	</body>
+</html>

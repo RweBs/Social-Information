@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Social Information</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]>
+		<script src="{{ url_for('static', filename='html5shiv.js') }}"></script><![endif]-->
+		<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+		<!--[if lte IE 8]>
+		<link rel="stylesheet" href="{{ url_for('static', filename='ie8.css') }}"/><![endif]-->
+		<!--<meta charset = "utf-8">-->
+        <!--&lt;!&ndash; 使用CSS样式来控制div布局 &ndash;&gt;-->
+        <!--<style type="text/css">-->
+            <!---->
+        <!--</style>-->
+	</head>
+
+		<body>
+				<header id="header">
+					<h1>Hello~</h1>
+					<p>Like homework. Unlike any homework</p>
+				</header>
+
+				<form id="form1" action="/tfidf" method="get">
+					<input type="submit" value="TF-IDF" />
+				</form>
+				<form id="form2" action="/sim" method="get">
+					<input type="submit" value="SIM" />
+				</form>
+				<form id="form3" action="/search" method="get">
+					<input type="submit" value="Search" />
+				</form>
+				<!--[if lte IE 8]>
+				<script src="{{ url_for('static', filename='respond.min.js') }}"></script><![endif]-->
+				<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+
+
+		</body>
+
+</html>

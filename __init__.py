@@ -20,7 +20,7 @@ app = Flask(__name__)
 #设置初始登录界面的url，并使用init.html渲染
 @app.route('/')
 def hello_world():
-    return render_template('init.html')
+    return render_template('init2.html')
 
 #判断文件名是否合法
 def allowed_file(filename):
@@ -29,7 +29,7 @@ def allowed_file(filename):
 #计算tfidf的初始登录界面
 @app.route('/tfidf', methods=['GET', 'POST'])
 def tfidfview():
-    return render_template('tf-idf.html')
+    return render_template('tfidf2.html')
 
 #上传文件的函数
 @app.route('/tfidf/upload', methods=['GET', 'POST'])
@@ -44,7 +44,7 @@ def upload():
             fname = str(len+1)+'.txt'
             upfile.save(os.path.join('data/uploads', fname))
             return upfile.filename
-    return render_template('tf-idf.html')
+    return render_template('tfidf2.html')
 
 #计算tfidf的函数
 @app.route('/tfidf/caltfidf', methods=['GET', 'POST'])
@@ -55,7 +55,7 @@ def caltfidf():
         fenci(ff, path)
 
     Tfidf(allfile)
-    return render_template('tf-idf.html')
+    return render_template('tfidf2.html')
 
 #显示上传文档的tfidf值
 @app.route('/tfidf/showtfidf', methods=['GET', 'POST'])
@@ -71,10 +71,12 @@ def show():
 def simview():
     #
     if request.method == 'GET':
-        return render_template('sim.html')
+        return render_template('sim2.html')
     else:
         str1 = request.form.get('first')
         str2 = request.form.get('second')
+        print str1
+        print str2
         if str1 == '' or str2 == '':
             return '["?","?","?"]'
         ans1, ans2, ans3 = solve(str1, str2)
@@ -84,12 +86,16 @@ def simview():
 @app.route('/search', methods=['GET', 'POST'])
 def searchview():
     if request.method == 'GET':
-        return render_template('search.html')
+        return render_template('search2.html')
     else:
         str1 = request.form.get('input')
+        print 12313
+        print str1
+        print 234324
         #读入输入的字符串，根据文档中词语和输入的相似性来确定排名
         get_rank(str1)
         return render_template("result.html")
+
 
 
 if __name__ == '__main__':

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Social Information</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="{{ url_for('static', filename='html5shiv.js') }}"></script><![endif]-->
+		<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="{{ url_for('static', filename='ie8.css') }}"/><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+		<header id="header">
+			<h1>SIM</h1>
+			<P>Input two sentences to calculate their similarities</P>
+		</header>
+
+	<!--<form id="form1" method="post" enctype="multipart/form-data">-->
+		<!--<p>The first sentence: <input type="text" id="first" placeholder="Input the first sentence"/></p>-->
+		<!--<p>The second sentence:<input type="text" id="second" placeholder="Input the second sentence"/></p>-->
+		<!--<input type="submit" id="answers" value="Show Answers"/>v-->
+	<!--</form>-->
+
+	<!--<p>The first sentence:-->
+		<input type="text" id="first" placeholder="Input the first sentence"/>
+	<!--<p>The second sentence:-->
+		<br>
+		<input type="text" id="second" placeholder="Input the second sentence"/>
+		<br>
+		<input type="submit" id="button" class="button" value="Show Answers"/>
+
+		<h4>Answers</h4>
+	<span id="product">Product : <span id="ans1"></span></span><br>
+    <span id="cos">Cos : <span id="ans2"></span></span><br>
+    <span id="jaccard">Jaccard : <span id="ans3"></span></span>
+	<script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+	<script>
+		$("#button").on("click", function () {
+
+			$.ajax({
+				url: '/sim',
+				type: 'post',
+				data: {
+					"first": $('#first')[0].value,
+					"second": $('#second')[0].value
+				},
+				success: function(data) {
+					//alert(data)
+					let [product, cos, jaccard] = JSON.parse(data)
+					$('#ans1').text(product)
+					$('#ans2').text(cos)
+					$('#ans3').text(jaccard)
+				}
+			})
+		})
+	</script>
+		<!--[if lte IE 8]>
+		<script src="{{ url_for('static', filename='respond.min.js') }}"></script><![endif]-->
+		<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+	</body>
+</html>
