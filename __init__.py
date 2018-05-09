@@ -75,8 +75,8 @@ def simview():
     else:
         str1 = request.form.get('first')
         str2 = request.form.get('second')
-        print str1
-        print str2
+        # print str1
+        # print str2
         if str1 == '' or str2 == '':
             return '["?","?","?"]'
         ans1, ans2, ans3 = solve(str1, str2)
@@ -89,9 +89,14 @@ def searchview():
         return render_template('search2.html')
     else:
         str1 = request.form.get('input')
-        print 12313
-        print str1
-        print 234324
+        # print 12313
+        # print str1
+        # print 234324
+        # vet = []
+        # vet = str1.split('。')
+        # print len(vet)
+        # for item in vet:
+        #     print item
         #读入输入的字符串，根据文档中词语和输入的相似性来确定排名
         get_rank(str1)
         return render_template("result.html")

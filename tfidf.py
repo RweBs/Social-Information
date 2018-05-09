@@ -28,7 +28,7 @@ def getFilelist(argv) :
 def fenci(argv,path) :
     #保存分词结果的目录
     sFilePath = './data/segfile'
-    if not os.path.exists(sFilePath) : 
+    if not os.path.exists(sFilePath):
         os.mkdir(sFilePath)
     #读取文档
     filename = argv
