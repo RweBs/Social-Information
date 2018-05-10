@@ -1,5 +1,5 @@
 # Introduction
-####社会信息检索作业，实现了以下三个小功能：
+#### 社会信息检索作业，实现了以下三个小功能：
 
 (1)计算文档TF-IDF值
 
@@ -11,7 +11,7 @@
 
 ## Operation method
 
-####工程文件在Windows下和Linux下都可以运行
+#### 工程文件在Windows下和Linux下都可以运行
 
 #### 需要安装的有：
 
@@ -39,25 +39,25 @@ $python __init__.py runserver
 
 则词语(A)的TF-IDF值为：
 
-$TF(A)=词语在文章中的出现次数$
+$ TF(A)=词语在文章中的出现次数 $
 
-$IDF(A)=\frac{词语在文章中出现次数}{文章总词数 }$
+$ IDF(A)=\frac{词语在文章中出现次数}{文章总词数 } $
 
-$TFIDF(A)=TF(A)*IDF(A)$
+$ TFIDF(A)=TF(A)*IDF(A) $
 
-###2 SIM
+### 2 SIM
 
-对输入的句子进行分词，构建向量空间，向量空间的维数为两个句子中的词语的种类数。求出两个句子对应的向量$V_a$和$V_b$
+对输入的句子进行分词，构建向量空间，向量空间的维数为两个句子中的词语的种类数。求出两个句子对应的向量$ V_a $和$ V_b $
 
-####向量点积: 
+#### 向量点积: 
 
-$product=V_a*V_b$
+$ product=V_a*V_b $
 
-####夹角余弦值:
+#### 夹角余弦值:
 
- $cos =\frac{product}{|V_a|*|V_b|}$
+ $ cos =\frac{product}{|V_a|*|V_b|} $
 
-####Jaccard: 
+#### Jaccard: 
 
-$jac = \frac{V_a\bigcap V_b}{V_a \bigcup V_b}$
+$ jac = \frac{V_a\bigcap V_b}{V_a \bigcup V_b} $
 
