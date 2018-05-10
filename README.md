@@ -19,7 +19,7 @@
 
 (2) python库 (jieba, numpy, scipy, scikit-learn)
 
-####可以通过两种方式运行工程文件：
+#### 可以通过两种方式运行工程文件：
 
 (1) 使用 Pycharm 打开social information工程，运行\_\_init\_\_.py 文件
 
@@ -39,25 +39,25 @@ $python __init__.py runserver
 
 则词语(A)的TF-IDF值为：
 
-$ TF(A)=词语在文章中的出现次数 $
+$$ TF(A)=词语在文章中的出现次数 $$
 
-$ IDF(A)=\frac{词语在文章中出现次数}{文章总词数 } $
+$$ IDF(A)=\frac{词语在文章中出现次数}{文章总词数 } $$
 
-$ TFIDF(A)=TF(A)*IDF(A) $
+$$ TFIDF(A)=TF(A)*IDF(A) $$
 
 ### 2 SIM
 
-对输入的句子进行分词，构建向量空间，向量空间的维数为两个句子中的词语的种类数。求出两个句子对应的向量$ V_a $和$ V_b $
+对输入的句子进行分词，构建向量空间，向量空间的维数为两个句子中的词语的种类数。求出两个句子对应的向量$$ V_a $$和$$ V_b $$
 
 #### 向量点积: 
 
-$ product=V_a*V_b $
+$$ product=V_a*V_b $$
 
 #### 夹角余弦值:
 
- $ cos =\frac{product}{|V_a|*|V_b|} $
+ $$ cos =\frac{product}{|V_a|*|V_b|} $$
 
 #### Jaccard: 
 
-$ jac = \frac{V_a\bigcap V_b}{V_a \bigcup V_b} $
+$$ jac = \frac{V_a\bigcap V_b}{V_a \bigcup V_b} $$
 
